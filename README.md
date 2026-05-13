@@ -1,8 +1,8 @@
-# job-stack
+# Job Stack
 
 An AI-powered job and internship management system designed to help students and job seekers analyze resumes, match skills with jobs, and track applications efficiently.
 
-## ✨ Features
+## Features
 
 - User authentication
 - Job application tracking
@@ -12,7 +12,7 @@ An AI-powered job and internship management system designed to help students and
 - Admin dashboard
 - Application management
 
-## 🛠️ Tech Stack
+## Tech Stack
 
 ### Frontend
 - HTML5
@@ -29,11 +29,11 @@ An AI-powered job and internship management system designed to help students and
 - Python
 - spaCy
 
-## 📂 Project Structure
+## Project Structure
 
 ```bash
 /job-portal
 ```
 
-## 🚀 Status
+## Status
 Currently under development.
