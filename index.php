@@ -34,6 +34,27 @@
         </div>
     </nav>
 
+    <section class="container hero" id="hero">
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1>Build your dream <span class="highlight">Job Stack </span>with ease</h1>
+                <p>The ultimate platform for developers to showcase their technical expertise and find the perfect role. Connect with top-tier 
+                    companies and take your career to the next level.
+                </p>
+
+                <div class="hero-btns">
+                    <a href="register.php" class="btn btn-primary"><i class="fa-solid fa-location-arrow"></i> Get Started</a>
+                    <a href="#about" class="btn btn-secondary"><i class="fa-solid fa-circle-info"></i> Learn More</a>
+                 </div>
+            </div>
+
+            <div class="hero-image">
+                <img src="images/hero.png" alt="Hero Image">
+            </div>
+        </div>
+    
+    </section>
+
 
     
     <script src="script.js"></script>
