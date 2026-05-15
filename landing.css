@@ -1,0 +1,183 @@
+:root {
+    --primary: #1967D2;
+    --light-primary: #E3F2FD;
+    --black: #0f172a;
+    --text-main: #334155;
+    --text-light: #64748b;
+    --bg-light: #f8fafc;
+    --white: #ffffff;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+/* NAVBAR */
+
+.navbar {
+    width: 100%;
+    height: 80px;
+    background: var(--white);
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 7%;
+}
+
+.logo {
+    font-size: 26px;
+    font-weight: bold;
+    font-family: "Dancing Script", cursive;
+    color: var(--black);
+}
+
+.logo span {
+    color: var(--primary);
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--text-main);
+    font-size: 18px;
+    font-weight: 500;
+    transition: 0.3s;
+}
+
+.nav-links a:hover {
+    color: var(--primary);
+}
+
+.cta-btns {
+    display: flex;
+    gap: 15px;
+}
+
+.btn {
+    padding: 10px 22px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: 0.3s;
+}
+
+.btn-primary {
+    background: var(--primary);
+    color: white;
+}
+
+.btn-primary:hover {
+    background: #1257b5;
+}
+
+.btn-secondary {
+    border: 1px solid var(--primary);
+    background: var(--light-primary);
+    color: var(--primary);
+}
+
+.btn-secondary:hover {
+    background: var(--primary);
+    color: white;
+}
+
+
+
+.menu-toggle {
+    display: none;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+
+
+.nav-links.active {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+
+    top: 80px;
+    left: 0;
+    width: 100%;
+    background: white;
+    padding: 20px 0;
+    text-align: center;
+    gap: 20px;
+    box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+}
+
+
+
+
+.navbar.sticky {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    animation: slideDown 0.3s ease;
+    background: rgba(255, 255, 255, 0.9);
+}
+
+
+.hero-content{
+    padding: 100px 7%;
+
+}
+
+
+@keyframes slideDown {
+
+    from {
+        transform: translateY(-100%);
+    }
+
+    to {
+        transform: translateY(0);
+    }
+}
+
+
+
+
+
+@media (max-width: 768px) {
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .nav-links.active {
+        display: flex;
+        flex-direction: column;
+
+        position: fixed;
+        top: 80px;
+        left: 0;
+
+        width: 100%;
+
+        background: white;
+
+        padding: 20px 0;
+        gap: 20px;
+
+        z-index: 999;
+    }
+
+    .nav-links,
+    .cta-btns {
+        display: none;
+    }
+}
