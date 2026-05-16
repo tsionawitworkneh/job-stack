@@ -915,6 +915,19 @@ body {
     }
 }
 
+@media (max-width: 880px) {
+
+    .hero-content {
+        flex-direction: column;
+        padding: 50px 7%;
+    }
+
+    .hero-text h1 {
+        font-size: 36px;
+    }
+
+}
+
 
 @media (max-width: 768px) {
 

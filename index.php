@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Job Stack</title>
-    <link rel="stylesheet" href="landing.css">
+    <link rel="stylesheet" href="assets/css/landing.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 
@@ -51,10 +51,10 @@
 
                 <div class="social-proof">
                     <div class="avatars">
-                        <img src="images/man-1.jfif" alt="User Avatar" class="avatar">
-                        <img src="images/man-2.jfif" alt="User Avatar" class="avatar">
-                        <img src="images/woman-1.jfif" alt="User Avatar" class="avatar">
-                        <img src="images/woman-2.jfif" alt="User Avatar" class="avatar">
+                        <img src="assets/images/man-1.jfif" alt="User Avatar" class="avatar">
+                        <img src="assets/images/man-2.jfif" alt="User Avatar" class="avatar">
+                        <img src="assets/images/woman-1.jfif" alt="User Avatar" class="avatar">
+                        <img src="assets/images/woman-2.jfif" alt="User Avatar" class="avatar">
                         <div class="more">+12k</div>
                     </div>
                     <p class="text">Joined by 12,000+ developers</p>
@@ -62,7 +62,7 @@
             </div>
 
             <div class="hero-image">
-                <img src="images/hero.png" alt="Hero Image">
+                <img src="assets/images/hero.png" alt="Hero Image">
             </div>
         </div>
 
@@ -475,7 +475,7 @@
 
 
 
-    <script src="script.js"></script>
+    <script src="assets/js/script.js"></script>
 </body>
 
 </html>
