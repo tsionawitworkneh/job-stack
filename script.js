@@ -3,6 +3,7 @@ const navLinks = document.querySelector(".nav-links");
 const ctaBtns = document.querySelector(".cta-btns");
 const navbar = document.querySelector(".navbar");
 
+
 mobileMenu.addEventListener("click", () => {
 
     navLinks.classList.toggle("active");
@@ -23,5 +24,21 @@ window.addEventListener("scroll", () => {
     } else {
         navbar.classList.remove("sticky");
     }
+
+});
+
+
+
+const faqQuestions = document.querySelectorAll(".faq-question");
+
+faqQuestions.forEach(question => {
+
+    question.addEventListener("click", () => {
+
+        const faqItem = question.parentElement;
+
+        faqItem.classList.toggle("active");
+
+    });
 
 });

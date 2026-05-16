@@ -244,6 +244,98 @@
         </div>
     </section>
 
+    <section class="container faq-section faq">
+        <div class="faq-header">
+            <div class="faq-icon">
+                <i class="fa-solid fa-circle-question"></i>
+            </div>
+
+            <h2>Frequently Asked Questions</h2>
+
+            <p>
+                Everything you need to know about the platform.
+            </p>
+        </div>
+
+        <div class="faq-list">
+
+            <div class="faq-item">
+                <button class="faq-question">
+                    How does JobStack help me find jobs?
+                    <i class="fa-solid fa-angle-down"></i>
+                </button>
+
+                <div class="faq-answer">
+                    <p>
+                        The platform analyzes your resume, extracts your skills,
+                    and recommends jobs and internships that match your profile.
+                    </p>
+                </div>
+            </div>
+
+            
+            <div class="faq-item">
+                <button class="faq-question">
+                    How are job match scores calculated?
+                    <i class="fa-solid fa-angle-down"></i>
+                </button>
+
+                <div class="faq-answer">
+                    <p>
+                        Match scores are calculated by comparing your extracted
+                    skills with job requirements and identifying compatibility.
+                    </p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question">
+                    Can I track my job applications?
+                    <i class="fa-solid fa-angle-down"></i>
+                </button>
+
+                <div class="faq-answer">
+                    <p>
+                         Yes, users can monitor application status directly from
+                    their dashboard in real time.
+                    </p>
+                </div>
+            </div>
+
+
+            <div class="faq-item">
+                <button class="faq-question">
+                    Is JobStack free for developers?
+                    <i class="fa-solid fa-angle-down"></i>
+                </button>
+
+                <div class="faq-answer">
+                    <p>
+                        Yes, JobStack is free for developers. You can create an account and start building your job stack at no cost.
+                        We want to help you find the best opportunities without any barriers.
+                    </p>
+                </div>
+            </div>
+
+
+            <div class="faq-item">
+                <button class="faq-question">
+                    What happens after I upload my resume?
+                    <i class="fa-solid fa-angle-down"></i>
+                </button>
+
+                <div class="faq-answer">
+                    <p>
+                        Our AI system scans your CV to identify technical skills,
+                    experience, and qualifications used for job matching.
+                    </p>
+                </div>
+            </div>
+
+
+        </div>
+    </section>
+
 
 
     <script src="script.js"></script>
