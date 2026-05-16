@@ -268,12 +268,12 @@
                 <div class="faq-answer">
                     <p>
                         The platform analyzes your resume, extracts your skills,
-                    and recommends jobs and internships that match your profile.
+                        and recommends jobs and internships that match your profile.
                     </p>
                 </div>
             </div>
 
-            
+
             <div class="faq-item">
                 <button class="faq-question">
                     How are job match scores calculated?
@@ -283,7 +283,7 @@
                 <div class="faq-answer">
                     <p>
                         Match scores are calculated by comparing your extracted
-                    skills with job requirements and identifying compatibility.
+                        skills with job requirements and identifying compatibility.
                     </p>
                 </div>
             </div>
@@ -296,8 +296,8 @@
 
                 <div class="faq-answer">
                     <p>
-                         Yes, users can monitor application status directly from
-                    their dashboard in real time.
+                        Yes, users can monitor application status directly from
+                        their dashboard in real time.
                     </p>
                 </div>
             </div>
@@ -311,7 +311,8 @@
 
                 <div class="faq-answer">
                     <p>
-                        Yes, JobStack is free for developers. You can create an account and start building your job stack at no cost.
+                        Yes, JobStack is free for developers. You can create an account and start building your job
+                        stack at no cost.
                         We want to help you find the best opportunities without any barriers.
                     </p>
                 </div>
@@ -327,13 +328,110 @@
                 <div class="faq-answer">
                     <p>
                         Our AI system scans your CV to identify technical skills,
-                    experience, and qualifications used for job matching.
+                        experience, and qualifications used for job matching.
                     </p>
                 </div>
             </div>
 
 
         </div>
+    </section>
+
+    <section class="contact-section" id="contact">
+
+        <div class="container">
+
+            
+            <div class="contact-header">
+
+                <h2>Contact Us</h2>
+
+                <h1>Let's build your future together</h1>
+
+                <p>
+                    Have questions about our platform or career opportunities? Our team is 
+                    here to help you every step of the way.
+                </p>
+
+            </div>
+
+            
+            <div class="contact-wrapper">
+
+                
+                <div class="contact-info">
+
+                    <div class="info-card">
+
+                        <div class="info-icon">
+                            <i class="fa-solid fa-envelope"></i>
+                        </div>
+
+                        <div>
+                            <h3>Email</h3>
+                            <p>support@jobstack.com</p>
+                        </div>
+
+                    </div>
+
+                    <div class="info-card">
+
+                        <div class="info-icon">
+                            <i class="fa-solid fa-phone"></i>
+                        </div>
+
+                        <div>
+                            <h3>Phone</h3>
+                            <p>+251 900 000 000</p>
+                        </div>
+
+                    </div>
+
+                    <div class="info-card">
+
+                        <div class="info-icon">
+                            <i class="fa-solid fa-location-dot"></i>
+                        </div>
+
+                        <div>
+                            <h3>Location</h3>
+                            <p>Addis Ababa, Ethiopia</p>
+                        </div>
+
+                    </div>
+
+                </div>
+
+                
+                <form class="contact-form">
+
+                    <div class="input-group">
+                        <input type="text" placeholder="Your Name" required>
+                    </div>
+
+                    <div class="input-group">
+                        <input type="email" placeholder="Your Email" required>
+                    </div>
+
+                    <div class="input-group">
+                        <input type="text" placeholder="Subject">
+                    </div>
+
+                    <div class="input-group">
+                        <textarea rows="6" placeholder="Write your message..." required></textarea>
+                    </div>
+
+                    <button type="submit" class="contact-btn">
+                        <i class="fa-solid fa-paper-plane"></i>
+                        Send Message
+                    </button>
+
+                </form>
+
+            </div>
+
+        </div>
+
     </section>
 
 
