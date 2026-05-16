@@ -821,7 +821,7 @@ body {
     color: var(--primary);
 }
 
-/* Links */
+
 .footer-links {
     display: flex;
     gap: 20px;
@@ -838,7 +838,7 @@ body {
     color: white;
 }
 
-/* Socials */
+
 .footer-socials {
     display: flex;
     gap: 12px;
@@ -867,7 +867,7 @@ body {
     background: var(--primary);
 }
 
-/* Bottom */
+
 .footer-bottom {
     border-top: 1px solid rgba(255,255,255,0.08);
 

@@ -22,7 +22,7 @@
         <ul class="nav-links">
             <li><a href="#home">Home</a></li>
             <li><a href="#about">About</a></li>
-            <li><a href="#faq">FAQ</a></li>
+            <li><a href="#faq-section">FAQ</a></li>
             <li><a href="#contact">Contact</a></li>
 
         </ul>
@@ -235,16 +235,16 @@
             <div class="category-card">
                 <div class="category-icon">
                     <i class="fa-solid fa-cloud"></i>
-                </div>
+                </div> 
 
-                <h3>Cloud Computing</h3>
+                <h3>Cloud Computing</h3
             </div>
 
 
         </div>
     </section>
 
-    <section class="container faq-section faq">
+    <section class="container faq-section" id="faq-section">
         <div class="faq-header">
             <div class="faq-icon">
                 <i class="fa-solid fa-circle-question"></i>
