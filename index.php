@@ -182,6 +182,68 @@
         </div>
     </section>
 
+    <section class="container job-categories">
+        <div class="job-categories-header">
+            <h2>Explore</h2>
+            <h1>Job Categories</h1>
+            <p>Explore the most in-demand technology roles
+                and find the perfect path for your career growth.our skills and interests.
+            </p>
+        </div>
+
+        <div class="categories-grid">
+            <div class="category-card">
+                <div class="category-icon">
+                    <i class="fa-solid fa-code"></i>
+                </div>
+
+                <h3>Software Engineering</h3>
+            </div>
+
+            <div class="category-card">
+                <div class="category-icon">
+                    <i class="fa-solid fa-database"></i>
+                </div>
+
+                <h3>Data Science & AI</h3>
+            </div>
+
+            <div class="category-card">
+                <div class="category-icon">
+                    <i class="fa-solid fa-shield-halved"></i>
+                </div>
+
+                <h3>Cybersecurity</h3>
+            </div>
+
+            <div class="category-card">
+                <div class="category-icon">
+                    <i class="fa-solid fa-pen-ruler"></i>
+                </div>
+
+                <h3>UI/UX Design</h3>
+            </div>
+
+            <div class="category-card">
+                <div class="category-icon">
+                    <i class="fa-solid fa-mobile-screen"></i>
+                </div>
+
+                <h3>Mobile Development</h3>
+            </div>
+
+            <div class="category-card">
+                <div class="category-icon">
+                    <i class="fa-solid fa-cloud"></i>
+                </div>
+
+                <h3>Cloud Computing</h3>
+            </div>
+
+
+        </div>
+    </section>
+
 
 
     <script src="script.js"></script>

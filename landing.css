@@ -413,6 +413,99 @@ body {
     font-weight: 400;
 }
 
+.job-categories{
+    padding: 80px 20px;
+}
+
+.job-categories-header{
+    text-align: center;
+    max-width: 800px;
+    margin: auto;
+}
+
+.job-categories-header h2 {
+    color: var(--primary);
+    font-size: 18px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.job-categories-header h1 {
+    margin-top: 15px;
+    font-size: 48px;
+    font-weight: 800;
+    line-height: 1.2;
+    color: var(--text-dark);
+}
+
+.job-categories-header p {
+    margin-top: 20px;
+    font-size: 20px;
+    line-height: 1.7;
+    color: var(--text-main);
+}
+
+.categories-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+    margin-top: 50px;
+}
+
+.category-card {
+    background: white;
+
+    border: 1px solid #e2e8f0;
+
+    border-radius: 18px;
+
+    padding: 25px 15px;
+
+    text-align: center;
+
+    transition: 0.3s;
+}
+
+.category-card:hover {
+    transform: translateY(-5px);
+
+    box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+}
+
+.category-icon {
+    width: 55px;
+    height: 55px;
+
+    margin: auto auto 18px;
+
+    border-radius: 14px;
+
+    background: rgba(25, 103, 210, 0.1);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    color: var(--primary);
+
+    font-size: 24px;
+
+    transition: 0.3s;
+}
+
+.category-card:hover .category-icon {
+    background: var(--primary);
+    color: var(--white);
+}
+
+.category-card h3 {
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--text-dark);
+}
+
+
 
 
 
@@ -436,6 +529,10 @@ body {
 
     .about-header h1 {
         font-size: 38px;
+    }
+
+    .categories-grid {
+        grid-template-columns: repeat(2, 1fr);
     }
 }
 
@@ -490,6 +587,32 @@ body {
 
     .step-grid{
         grid-template-columns: 1fr;
+    }
+
+    .categories-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .section-header h1 {
+        font-size: 32px;
+    }
+
+    .section-header p {
+        font-size: 16px;
+    }
+
+    .category-card {
+        padding: 22px 15px;
+    }
+
+    .category-icon {
+        width: 50px;
+        height: 50px;
+        font-size: 22px;
+    }
+
+    .category-card h3 {
+        font-size: 17px;
     }
 
 }
