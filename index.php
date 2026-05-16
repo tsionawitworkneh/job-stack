@@ -434,6 +434,45 @@
 
     </section>
 
+    <footer class="footer">
+
+    <div class="container footer-content">
+
+        <div class="footer-logo">
+            Job<span>Stack</span>
+        </div>
+
+        <div class="footer-links">
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#faq">FAQ</a>
+            <a href="#contact">Contact</a>
+        </div>
+
+        <div class="footer-socials">
+
+            <a href="#">
+                <i class="fa-brands fa-facebook-f"></i>
+            </a>
+
+            <a href="#">
+                <i class="fa-brands fa-linkedin-in"></i>
+            </a>
+
+            <a href="#">
+                <i class="fa-brands fa-github"></i>
+            </a>
+
+        </div>
+
+    </div>
+
+    <div class="footer-bottom">
+        <p>© 2026 JobStack</p>
+    </div>
+
+</footer>
+
 
 
     <script src="script.js"></script>
