@@ -32,7 +32,7 @@
         </div>
 
         
-        <form class="signup-form">
+        <form class="signup-form" action="actions/register_action.php" method="POST">
 
             <div class="input-group">
                 <label>Full Name</label>
