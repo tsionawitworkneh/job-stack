@@ -15,7 +15,7 @@
     <div class="signup-card">
 
         
-        <a href="index.html" class="back-link">
+        <a href="index.php" class="back-link">
             <i class="fa-solid fa-arrow-left"></i>
             Back to Home
         </a>
