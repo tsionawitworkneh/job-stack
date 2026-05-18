@@ -37,6 +37,7 @@
 
                 <input 
                     type="email"
+                    name="email"
                     placeholder="name@example.com"
                     required
                 >
@@ -54,6 +55,7 @@
 
                 <input 
                     type="password"
+                    name="password"
                     placeholder="••••••••"
                     required
                 >

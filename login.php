@@ -32,7 +32,7 @@
         </div>
 
         
-        <form class="signin-form">
+        <form class="signin-form" action="actions/login_action.php" method="POST">
 
             <div class="input-group">
 
@@ -40,6 +40,7 @@
 
                 <input 
                     type="email"
+                    name="email"
                     placeholder="name@example.com"
                     required
                 >
@@ -58,6 +59,7 @@
 
                 <input 
                     type="password"
+                    name="password"
                     placeholder="••••••••"
                     required
                 >

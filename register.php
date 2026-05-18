@@ -36,23 +36,23 @@
 
             <div class="input-group">
                 <label>Full Name</label>
-                <input type="text" placeholder="John Doe" required>
+                <input type="text" placeholder="John Doe" name="fullname" required>
             </div>
 
             <div class="input-group">
                 <label>Email</label>
-                <input type="email" placeholder="name@example.com" required>
+                <input type="email" placeholder="name@example.com" name="email" required>
             </div>
 
             <div class="input-group">
                 <label>Password</label>
-                <input type="password" placeholder="••••••••" required>
+                <input type="password" placeholder="••••••••" name="password" required>
                 <small>Must be at least 8 characters long</small>
             </div>
 
             <div class="input-group">
                 <label>Confirm Password</label>
-                <input type="password" placeholder="••••••••" required>
+                <input type="password" placeholder="••••••••" name="confirm_password" required>
             </div>
 
             <button type="submit" class="signup-btn">

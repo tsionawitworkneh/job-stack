@@ -6,25 +6,22 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $email = trim($_POST['email']);
     $password = $_POST['password'];
 
-    $stmt = $pdo->prepare("SELECT * FROM users WHERE email = ?");
+    
+    $stmt = $pdo->prepare("SELECT * FROM users WHERE email = ? AND role = 'user'");
     $stmt->execute([$email]);
     $user = $stmt->fetch();
 
     if ($user && password_verify($password, $user['password'])) {
-    
+        
         $_SESSION['user_id'] = $user['id'];
         $_SESSION['user_name'] = $user['fullname'];
         $_SESSION['user_role'] = $user['role'];
 
-        
-        if ($user['role'] === 'admin') {
-            header("Location: ../admin/dashboard.php");
-        } else {
-            header("Location: ../user/dashboard.php");
-        }
+        header("Location: ../user/dashboard.php");
         exit();
     } else {
-        header("Location: ../login.php?error=invalid_login");
+        
+        header("Location: ../login.php?error=invalid_credentials");
         exit();
     }
 }
