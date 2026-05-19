@@ -12,11 +12,11 @@
     background: #FFFFFF;
     padding: 32px 24px;
     border-radius: 20px;
-    border: 1px solid #F3F4F6;
+    border: 1px solid var(--border);
     display: flex;
     justify-content: space-between;
     align-items: center;
-    box-shadow: 0 1px 3px rgba(0,0,0,0.02);
+    box-shadow: 0 1px 4px rgba(0,0,0,0.02);
 }
 
 .stat-data .label {
