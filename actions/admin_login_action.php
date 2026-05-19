@@ -17,7 +17,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $_SESSION['user_name'] = $admin['fullname'];
         $_SESSION['user_role'] = $admin['role'];
 
-        header("Location: ../admin/dashboard.php");
+        header("Location: ../admin/admin_dashboard.php");
         exit();
     } else {
         header("Location: ../admin/admin_login.php?error=access_denied");
