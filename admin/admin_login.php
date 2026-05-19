@@ -14,10 +14,6 @@
 
         
         
-
-        
-
-        
         <div class="signin-header">
 
             <h2>Admin Portal</h2>
@@ -29,7 +25,7 @@
         </div>
 
         
-        <form class="signin-form">
+        <form class="signin-form" action="../actions/admin_login_action.php" method="POST">
 
             <div class="input-group">
 
