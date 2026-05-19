@@ -1,0 +1,84 @@
+/* Stat Cards Grid */
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    width: 100%;
+    margin-bottom: 30px;
+}
+
+.stat-card {
+    background: white;
+    padding: 24px;
+    border-radius: 16px;
+    border: 1px solid var(--border);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.stat-info h2 { margin: 5px 0 0; font-size: 28px; color: var(--text-dark); }
+.stat-card i {
+    width: 45px; height: 45px;
+    border-radius: 12px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 18px;
+}
+
+.stat-card.blue i { background: #eff6ff; color: #2563eb; }
+.stat-card.purple i { background: #f5f3ff; color: #7c3aed; }
+.stat-card.orange i { background: #fff7ed; color: #ea580c; }
+.stat-card.green i { background: #f0fdf4; color: #16a34a; }
+
+.overview-row {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 25px;
+    width: 100%;
+}
+
+.content-card {
+    background: white;
+    padding: 24px;
+    border-radius: 16px;
+    border: 1px solid var(--border);
+}
+
+/* Recent Table */
+.recent-table { width: 100%; border-collapse: collapse; margin-top: 15px; }
+.recent-table th { text-align: left; padding: 12px 0; color: var(--text-muted); font-size: 13px; border-bottom: 1px solid #f1f5f9; }
+.recent-table td { padding: 15px 0; border-bottom: 1px solid #f8fafc; font-size: 14px; }
+
+/* THE FIX FOR THE BLACK CIRCLE */
+.progress-container {
+    position: relative;
+    width: 140px; height: 140px;
+    margin: 20px auto;
+}
+
+.circular-progress { width: 100%; height: 100%; display: block; }
+
+/* Force transparency on all SVG shapes */
+.circular-progress circle, 
+svg circle {
+    fill: none !important;
+    fill-opacity: 0 !important;
+}
+
+.circular-progress .bg { stroke: #f1f5f9; stroke-width: 8; }
+
+.circular-progress .fg { 
+    stroke: #2563eb; 
+    stroke-width: 8; 
+    stroke-linecap: round;
+    stroke-dasharray: 210, 283; 
+    transform: rotate(-90deg);
+    transform-origin: 50% 50%;
+}
+
+.progress-text {
+    position: absolute; top: 50%; left: 50%;
+    transform: translate(-50%, -50%); text-align: center;
+}
+
+.progress-text .percent { font-size: 22px; font-weight: 700; color: var(--text-dark); display: block; }
