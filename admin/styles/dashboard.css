@@ -4,7 +4,7 @@
     --bg-main: #f8fafc;
     --sidebar-bg: #ffffff;
     --text-dark: #0f172a;
-    --text-muted: #64748b;
+    --text-muted: #6b6c6e;
     --border: #e2e8f0;
     --sidebar-width: 260px;
 }
@@ -104,7 +104,7 @@ body {
 }
 
 .user-profile { display: flex; align-items: center; gap: 12px; text-align: right; }
-.user-profile span { display: block; font-weight: 500; font-size: 14px; }
+.user-profile span { display: block; font-weight: 500; font-size: 14px; color: var(--text-muted); }
 .user-profile i { color: #d1d5db; }
 
 .tab-content {
