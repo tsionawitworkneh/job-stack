@@ -9,26 +9,29 @@
     --sidebar-width: 260px;
 }
 
-* { box-sizing: border-box; font-family: 'Inter', sans-serif; }
+* {
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
 
 body {
     margin: 0;
-    padding: 0;
-    background-color: var(--bg-main);
+    background: var(--bg-gray);
     display: flex;
     min-height: 100vh;
 }
 
-/* Sidebar stays fixed on the left */
+
 .sidebar {
     width: var(--sidebar-width);
     height: 100vh;
-    background: var(--sidebar-bg);
+    background: #fff;
     border-right: 1px solid var(--border);
     position: fixed;
-    left: 0;
-    top: 0;
-    z-index: 1000;
+    left: 0; top: 0;
+    display: flex;
+    flex-direction: column;
+    z-index: 100;
 }
 
 .sidebar-header {
@@ -48,29 +51,40 @@ body {
     border-radius: 10px;
 }
 
-.nav-menu { flex: 1; padding: 10px 16px; }
-
-.nav-item {
-    display: flex; align-items: center; gap: 12px;
-    padding: 12px 16px; text-decoration: none;
-    color: var(--text-muted); border-radius: 10px;
-    margin-bottom: 5px; transition: 0.2s;
+.nav-menu {
+    flex: 1;
+    padding: 10px 16px;
 }
 
-.nav-item:hover, .nav-item.active {
+.nav-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 16px;
+    text-decoration: none;
+    color: var(--text-muted);
+    border-radius: 10px;
+    margin-bottom: 5px;
+    transition: 0.2s;
+}
+
+.nav-item:hover,
+.nav-item.active {
     background: var(--primary-light);
     color: var(--primary);
     font-weight: 600;
 }
 
-.logout-btn { padding: 20px; border-top: 1px solid var(--border); }
-
-/* CONTENT AREA FIX: No flexbox centering */
-.main-content {
-    margin-left: var(--sidebar-width);
-    flex: 1;
+.logout-btn {
     padding: 20px;
-    text-align: left; /* Forces left alignment */
+    border-top: 1px solid var(--border);
+}
+
+
+.main-content {
+    flex: 1;
+    padding: 30px 40px;
+    max-width: calc(100vw - var(--sidebar-width));
 }
 
 .top-bar {
@@ -89,6 +103,11 @@ body {
     text-align: left;
 }
 
-.user-profile { display: flex; align-items: center; gap: 10px; }
+.user-profile { display: flex; align-items: center; gap: 12px; text-align: right; }
+.user-profile span { display: block; font-weight: 600; font-size: 14px; }
+.user-profile i { color: #d1d5db; }
 
-.tab-content { width: 100%; text-align: left; }
+.tab-content {
+    width: 100%;
+    text-align: left;
+}

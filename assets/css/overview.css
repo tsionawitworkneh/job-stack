@@ -1,84 +1,111 @@
-/* Stat Cards Grid */
+/* assets/css/tabs/overview.css */
+
+/* 4-Column Grid */
 .stats-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: 20px;
-    width: 100%;
-    margin-bottom: 30px;
+    gap: 24px;
+    margin-bottom: 48px;
 }
 
 .stat-card {
-    background: white;
-    padding: 24px;
-    border-radius: 16px;
-    border: 1px solid var(--border);
+    background: #FFFFFF;
+    padding: 32px 24px;
+    border-radius: 20px;
+    border: 1px solid #F3F4F6;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.02);
 }
 
-.stat-info h2 { margin: 5px 0 0; font-size: 28px; color: var(--text-dark); }
-.stat-card i {
-    width: 45px; height: 45px;
-    border-radius: 12px;
-    display: flex; align-items: center; justify-content: center;
+.stat-data .label {
+    display: block;
+    font-size: 14px;
+    color: var(--text-muted);
+    margin-bottom: 12px;
+    font-weight: 500;
+}
+
+.stat-data .number {
+    font-size: 32px;
+    font-weight: 700;
+    color: var(--text-dark);
+    margin: 0;
+}
+
+/* Icon Circles */
+.icon-circle {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     font-size: 18px;
 }
 
-.stat-card.blue i { background: #eff6ff; color: #2563eb; }
-.stat-card.purple i { background: #f5f3ff; color: #7c3aed; }
-.stat-card.orange i { background: #fff7ed; color: #ea580c; }
-.stat-card.green i { background: #f0fdf4; color: #16a34a; }
+.bg-blue { background: #EFF6FF; color: #2563EB; }
+.bg-purple { background: #F5F3FF; color: #7C3AED; }
+.bg-yellow { background: #FEFCE8; color: #CA8A04; }
+.bg-green { background: #F0FDF4; color: #16A34A; }
 
-.overview-row {
-    display: grid;
-    grid-template-columns: 2fr 1fr;
-    gap: 25px;
-    width: 100%;
+/* Table Section Header */
+.section-title-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
 }
 
-.content-card {
-    background: white;
-    padding: 24px;
-    border-radius: 16px;
-    border: 1px solid var(--border);
+.section-title-row h2 { font-size: 20px; font-weight: 700; color: var(--text-dark); margin: 0; }
+.btn-view-all {
+    text-decoration: none;
+    padding: 8px 16px;
+    border: 1px solid #E5E7EB;
+    border-radius: 10px;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--text-dark);
+    background: #FFF;
 }
 
-/* Recent Table */
-.recent-table { width: 100%; border-collapse: collapse; margin-top: 15px; }
-.recent-table th { text-align: left; padding: 12px 0; color: var(--text-muted); font-size: 13px; border-bottom: 1px solid #f1f5f9; }
-.recent-table td { padding: 15px 0; border-bottom: 1px solid #f8fafc; font-size: 14px; }
-
-/* THE FIX FOR THE BLACK CIRCLE */
-.progress-container {
-    position: relative;
-    width: 140px; height: 140px;
-    margin: 20px auto;
+/* The Clean Table */
+.table-wrapper {
+    background: #FFFFFF;
+    border: 1px solid #F3F4F6;
+    border-radius: 20px;
+    overflow: hidden;
 }
 
-.circular-progress { width: 100%; height: 100%; display: block; }
-
-/* Force transparency on all SVG shapes */
-.circular-progress circle, 
-svg circle {
-    fill: none !important;
-    fill-opacity: 0 !important;
+.modern-table { width: 100%; border-collapse: collapse; }
+.modern-table th {
+    text-align: left;
+    padding: 20px 24px;
+    font-size: 13px;
+    text-transform: capitalize;
+    color: var(--text-dark);
+    font-weight: 700;
+    border-bottom: 1px solid #F3F4F6;
 }
 
-.circular-progress .bg { stroke: #f1f5f9; stroke-width: 8; }
-
-.circular-progress .fg { 
-    stroke: #2563eb; 
-    stroke-width: 8; 
-    stroke-linecap: round;
-    stroke-dasharray: 210, 283; 
-    transform: rotate(-90deg);
-    transform-origin: 50% 50%;
+.modern-table td {
+    padding: 20px 24px;
+    font-size: 14px;
+    border-bottom: 1px solid #F9FAF7;
 }
 
-.progress-text {
-    position: absolute; top: 50%; left: 50%;
-    transform: translate(-50%, -50%); text-align: center;
-}
+.job-title { font-weight: 600; color: var(--text-dark); }
+.company-name { color: #6B7280; }
+.date-text { color: #9CA3AF; }
 
-.progress-text .percent { font-size: 22px; font-weight: 700; color: var(--text-dark); display: block; }
+/* Badges */
+.status-pill {
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+}
+.pill-approved { background: #DCFCE7; color: #15803D; }
+.pill-pending { background: #FEF9C3; color: #854D0E; }
+.pill-review { background: #DBEAFE; color: #1E40AF; }
