@@ -244,6 +244,36 @@
         </div>
     </section>
 
+    <section class="hire-section">
+
+    <div class="container">
+
+        <div class="hire-card">
+
+            
+            <div class="hire-icon">
+                <i class="fa-solid fa-circle-plus"></i>
+            </div>
+
+            
+            <h3>Are you hiring?</h3>
+
+            <p>
+                Post your job openings and connect with the best developer talent.
+            </p>
+
+            
+            <a href="post-job.php" class="hire-btn">
+                <i class="fa-solid fa-plus"></i>
+                Report Job
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
     <section class="container faq-section" id="faq-section">
         <div class="faq-header">
             <div class="faq-icon">
