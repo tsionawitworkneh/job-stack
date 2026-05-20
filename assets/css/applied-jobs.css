@@ -1,0 +1,155 @@
+.applied-jobs-container {
+    width: 100%;
+}
+
+.table-card {
+    background: #ffffff;
+    border: 1px solid #f3f4f6;
+    border-radius: 20px;
+    padding: 32px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.02);
+}
+
+
+.table-header-flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+}
+
+.table-header-flex h2 {
+    margin: 0;
+    font-size: 20px;
+    font-weight: 700;
+    color: #111827;
+}
+
+.total-count-text {
+    color: #6b7280;
+    font-size: 14px;
+}
+
+
+.applied-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.applied-table th {
+    text-align: left;
+    padding: 16px 20px;
+    background: #fafafa;
+    color: #6b7280;
+    font-size: 13px;
+    font-weight: 600;
+    border-bottom: 1px solid #f3f4f6;
+}
+
+.applied-table td {
+    padding: 20px;
+    border-bottom: 1px solid #f9fafb;
+    font-size: 14px;
+    color: #111827;
+}
+
+
+.job-title-main {
+    margin: 0 0 4px 0;
+    font-size: 15px;
+    font-weight: 600;
+}
+
+.job-type-sub {
+    font-size: 13px;
+    color: #6b7280;
+}
+
+.company-name-bold {
+    font-weight: 500;
+    color: #111827;
+}
+
+.location-meta {
+    color: #9ca3af;
+    font-size: 12px;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    margin-top: 2px;
+}
+
+.date-column {
+    color: #6b7280;
+}
+
+
+.status-pill {
+    display: inline-block;
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.pill-Pending {
+    background: #fffbeb;
+    color: #d97706;
+}
+
+.pill-Reviewed {
+    background: #eff6ff;
+    color: #2563eb;
+}
+
+.pill-Accepted {
+    background: #f0fdf4;
+    color: #16a34a;
+}
+
+.pill-Rejected {
+    background: #fef2f2;
+    color: #ef4444;
+}
+
+
+.btn-view-details {
+    background: #f8fafc;
+    color: #0e5fd0;
+    border: 1px solid #e2e8f0;
+    padding: 8px 16px;
+    border-radius: 10px;
+    text-decoration: none;
+    font-size: 12px;
+    font-weight: 600;
+    transition: all 0.2s;
+    cursor: pointer;
+}
+
+.btn-view-details:hover {
+    background: #ffffff;
+    color: #2563eb;
+    border-color: #2563eb;
+}
+
+
+.empty-table-row {
+    text-align: center;
+    padding: 80px 20px;
+    color: #9ca3af;
+}
+
+.empty-table-row i {
+    margin-bottom: 20px;
+    opacity: 0.2;
+}
+
+.empty-table-row p {
+    margin-bottom: 15px;
+}
+
+.btn-browse-inline {
+    color: #2961d9;
+    font-weight: 600;
+    text-decoration: none;
+}

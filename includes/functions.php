@@ -121,4 +121,43 @@ function getJobById($pdo, $id) {
     return $stmt->fetch();
 }
 
+/**
+ * Fetch all job applications for the logged-in user with job details
+ */
+function getUserApplications($pdo, $userId) {
+    $sql = "SELECT a.id as app_id, a.status, a.applied_at, j.title, j.company, j.location, j.type, j.salary, j.description, j.requirements
+            FROM applications a 
+            INNER JOIN jobs j ON a.job_id = j.id 
+            WHERE a.user_id = ? 
+            ORDER BY a.applied_at DESC";
+    $stmt = $pdo->prepare($sql);
+    $stmt->execute([$userId]);
+    return $stmt->fetchAll(PDO::FETCH_ASSOC);
+}
+
+
+function getSavedJobs($pdo, $userId) {
+    $sql = "SELECT s.id as save_id, j.* 
+            FROM saved_jobs s 
+            JOIN jobs j ON s.job_id = j.id 
+            WHERE s.user_id = ? 
+            ORDER BY s.id DESC";
+    $stmt = $pdo->prepare($sql);
+    $stmt->execute([$userId]);
+    return $stmt->fetchAll();
+}
+
+/**
+ * Fetch User and Profile information together
+ */
+function getFullUserProfile($pdo, $userId) {
+    $sql = "SELECT u.fullname, u.email, u.created_at, p.cv_file, p.bio, p.skills 
+            FROM users u 
+            LEFT JOIN user_profiles p ON u.id = p.user_id 
+            WHERE u.id = ?";
+    $stmt = $pdo->prepare($sql);
+    $stmt->execute([$userId]);
+    return $stmt->fetch();
+}
+
 ?>

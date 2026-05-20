@@ -1,0 +1,23 @@
+.saved-jobs-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+    width: 100%;
+}
+
+.saved-card {
+    background: white;
+    padding: 24px;
+    border-radius: 20px;
+    border: 1px solid #f1f5f9;
+    position: relative;
+}
+
+.btn-remove-save {
+    position: absolute;
+    top: 20px; right: 20px;
+    color:rgb(13, 82, 241);
+    cursor: pointer;
+    font-size: 18px;
+    text-decoration: none;
+}

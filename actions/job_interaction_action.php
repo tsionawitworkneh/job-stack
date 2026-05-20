@@ -1,12 +1,11 @@
 <?php
 
-
 session_start();
 require_once '../config/db.php';
 
-
+// Security: User must be logged in
 if (!isset($_SESSION['user_id'])) {
-    header("Location: ../login.php?error=unauthorized");
+    header("Location: ../login.php");
     exit();
 }
 
@@ -14,60 +13,58 @@ $user_id = $_SESSION['user_id'];
 
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['confirm_apply'])) {
-    
-    if (isset($_POST['job_id'])) {
-        $job_id = $_POST['job_id'];
+    $job_id = $_POST['job_id'];
 
-        try {
+    try {
+        
+        $check = $pdo->prepare("SELECT id FROM applications WHERE user_id = ? AND job_id = ?");
+        $check->execute([$user_id, $job_id]);
+
+        if (!$check->fetch()) {
             
-            $sql = "INSERT IGNORE INTO applications (user_id, job_id, status, applied_at) 
-                    VALUES (?, ?, 'Pending', CURRENT_TIMESTAMP)";
-            
+            $sql = "INSERT INTO applications (user_id, job_id, status) VALUES (?, ?, 'Pending')";
             $stmt = $pdo->prepare($sql);
             $stmt->execute([$user_id, $job_id]);
-
-            
-            header("Location: ../user/dashboard.php?tab=applied-jobs&msg=applied_success");
-            exit();
-
-        } catch (PDOException $e) {
-            die("Database Error: " . $e->getMessage());
+            $msg = "success";
+        } else {
+            $msg = "already_applied";
         }
+
+        // Redirect to the "Applied Jobs" tab
+        header("Location: ../user/dashboard.php?tab=applied-jobs&msg=" . $msg);
+        exit();
+
+    } catch (PDOException $e) {
+        // If there's an error, this will show it instead of just redirecting
+        die("Critical Database Error: " . $e->getMessage());
     }
 }
 
-
+// =========================================================
+// 2. HANDLE SAVE / BOOKMARK (Submitted via GET)
+// =========================================================
 if (isset($_GET['save_id'])) {
     $job_id = $_GET['save_id'];
 
     try {
-        
-        $check_sql = "SELECT id FROM saved_jobs WHERE user_id = ? AND job_id = ?";
-        $check_stmt = $pdo->prepare($check_sql);
-        $check_stmt->execute([$user_id, $job_id]);
-        $already_saved = $check_stmt->fetch();
+        $check = $pdo->prepare("SELECT id FROM saved_jobs WHERE user_id = ? AND job_id = ?");
+        $check->execute([$user_id, $job_id]);
 
-        if ($already_saved) {
-            
-            $delete_sql = "DELETE FROM saved_jobs WHERE user_id = ? AND job_id = ?";
-            $pdo->prepare($delete_sql)->execute([$user_id, $job_id]);
-            $status_msg = "unsaved";
+        if ($check->fetch()) {
+            // Already saved, so delete it (Toggle off)
+            $pdo->prepare("DELETE FROM saved_jobs WHERE user_id = ? AND job_id = ?")->execute([$user_id, $job_id]);
         } else {
-            
-            $insert_sql = "INSERT INTO saved_jobs (user_id, job_id) VALUES (?, ?)";
-            $pdo->prepare($insert_sql)->execute([$user_id, $job_id]);
-            $status_msg = "saved";
+            // Not saved, so insert it (Toggle on)
+            $pdo->prepare("INSERT INTO saved_jobs (user_id, job_id) VALUES (?, ?)")->execute([$user_id, $job_id]);
         }
 
-        
-        header("Location: ../user/dashboard.php?tab=find-jobs&status=" . $status_msg);
+        header("Location: ../user/dashboard.php?tab=find-jobs");
         exit();
-
     } catch (PDOException $e) {
-        die("Database Error: " . $e->getMessage());
+        die("Error: " . $e->getMessage());
     }
 }
 
-
+// If no valid request, go back to dashboard
 header("Location: ../user/dashboard.php");
 exit();
