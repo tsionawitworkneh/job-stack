@@ -1,0 +1,54 @@
+
+.user-list-card {
+    background: white;
+    padding: 32px;
+    border-radius: 16px;
+    border: 1px solid #e2e8f0;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.02);
+}
+
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+}
+
+.card-header h3 { margin: 0; font-size: 20px; font-weight: 700; color: #0f172a; }
+
+.user-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.user-table th {
+    text-align: left;
+    padding: 16px;
+    font-size: 13px;
+    color: #64748b;
+    border-bottom: 2px solid #f1f5f9;
+}
+
+.user-table td {
+    padding: 16px;
+    font-size: 14px;
+    border-bottom: 1px solid #f8fafc;
+    color: #1e293b;
+}
+
+.user-name { font-weight: 600; color: #2563eb; }
+.user-email { color: #64748b; }
+
+
+.btn-delete {
+    background: #fee2e2;
+    color: #ef4444;
+    border: none;
+    padding: 6px 12px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.btn-delete:hover { background: #fecaca; }

@@ -1,6 +1,6 @@
 <?php 
 require_once '../config/db.php';
-require_once '../includes/auth_check.php';
+require_once '../includes/admin_check.php';
 require_once '../includes/functions.php';
 
 
@@ -14,6 +14,7 @@ $user_id = $_SESSION['user_id'];
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin Dashboard | Job Stack</title>
     <link rel="stylesheet" href="styles/dashboard.css">
+    <link rel="stylesheet" href="styles/confirm-modal.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
@@ -39,7 +40,7 @@ $user_id = $_SESSION['user_id'];
         </div>
     </aside>
 
-    <!-- Main Content -->
+    
     <main class="main-content">
         <header class="top-bar">
             <h2>Welcome back, <?php echo explode(' ', $_SESSION['user_name'])[1]; ?>! 👋</h2>
@@ -51,11 +52,11 @@ $user_id = $_SESSION['user_id'];
 
         <div class="tab-content">
             <?php 
-        // Sync the array names with your sidebar hrefs
+        
         $allowed_tabs = ['dashboard', 'manage-users', 'manage-jobs', 'job-applications'];
         
         if (in_array($tab, $allowed_tabs)) {
-            // This will look for tabs/manage-users.php, etc.
+            
             include "tabs/" . $tab . ".php";
         } else {
             include "tabs/dashboard.php";
@@ -64,6 +65,49 @@ $user_id = $_SESSION['user_id'];
         </div>
 
     </main>
+
+    
+
+<div id="confirmModal" class="confirm-overlay">
+    <div class="confirm-modal-content">
+        <div class="warning-icon">
+            <i class="fa-solid fa-triangle-exclamation"></i>
+        </div>
+        <h3>Are you sure?</h3>
+        <p id="confirmMessage">This action cannot be undone. All related data will be permanently removed.</p>
+        
+        <div class="confirm-actions">
+            <button class="btn-confirm btn-no" onclick="closeConfirmModal()">Cancel</button>
+            <a id="confirmDeleteBtn" href="#" class="btn-confirm btn-yes" style="text-decoration: none; text-align: center;">Delete Now</a>
+        </div>
+    </div>
+</div>
+
+<script>
+let modalOverlay = document.getElementById('confirmModal');
+let deleteLink = document.getElementById('confirmDeleteBtn');
+let confirmMsg = document.getElementById('confirmMessage');
+
+function openConfirmModal(url, type) {
+    if(type === 'user') {
+        confirmMsg.innerText = "Are you sure you want to remove this user? This will also delete their profile and applications.";
+    } else {
+        confirmMsg.innerText = "Are you sure you want to delete this job posting? This action is permanent.";
+    }
+    
+    deleteLink.href = url;
+    modalOverlay.style.display = 'flex';
+}
+
+function closeConfirmModal() {
+    modalOverlay.style.display = 'none';
+}
+
+
+window.addEventListener('click', (e) => {
+    if (e.target == modalOverlay) closeConfirmModal();
+});
+</script>
 
 </body>
 </html>
