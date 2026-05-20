@@ -48,6 +48,34 @@ function getStatusClass($status) {
     }
 }
 
+/**
+ * Fetch all active job postings
+ */
+function getAllJobs($pdo) {
+    $stmt = $pdo->query("SELECT * FROM jobs ORDER BY created_at DESC");
+    return $stmt->fetchAll();
+}
+
+/**
+ * Check if the user has applied to this specific job
+ */
+function hasApplied($pdo, $userId, $jobId) {
+    $stmt = $pdo->prepare("SELECT id FROM applications WHERE user_id = ? AND job_id = ?");
+    $stmt->execute([$userId, $jobId]);
+    return $stmt->fetch() ? true : false;
+}
+
+
+/**
+ * Check if the user has saved this specific job
+ */
+function isSaved($pdo, $userId, $jobId) {
+    $stmt = $pdo->prepare("SELECT id FROM saved_jobs WHERE user_id = ? AND job_id = ?");
+    $stmt->execute([$userId, $jobId]);
+    return $stmt->fetch() ? true : false;
+}
+
+
 // Get counts for Admin Dashboard
 function getAdminStats($pdo) {
     $stats = [];
