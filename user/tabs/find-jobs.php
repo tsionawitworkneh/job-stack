@@ -1,19 +1,28 @@
 <?php
-// Link the CSS file
+
 echo '<link rel="stylesheet" href="../assets/css/find-jobs.css">';
 
-// Fetch all jobs from the database
+
 $jobs = getAllJobs($pdo);
 ?>
 
 <div class="find-jobs-container">
-    <!-- Search Bar -->
-    <div class="search-bar-row">
-        <input type="text" placeholder="Search by job title, company, or keywords...">
-        <button class="btn-action btn-apply">Search Jobs</button>
+    
+    <div class="search-filter-row">
+        <div class="search-box">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <input type="text" id="jobSearch" placeholder="Search title or company...">
+        </div>
+        
+        <select id="typeFilter" class="filter-dropdown">
+            <option value="all">All Types</option>
+            <option value="Full Time">Full Time</option>
+            <option value="Remote">Remote</option>
+            <option value="Internship">Internship</option>
+            <option value="Part Time">Part Time</option>
+        </select>
     </div>
 
-    <!-- Job Cards Grid -->
     <div class="jobs-grid">
         <?php if(empty($jobs)): ?>
             <div style="text-align:center; padding: 100px 0; color:#9ca3af; width: 100%;">
@@ -26,7 +35,10 @@ $jobs = getAllJobs($pdo);
                 $applied = hasApplied($pdo, $user_id, $job['id']); 
                 $saved = isSaved($pdo, $user_id, $job['id']); 
             ?>
-            <div class="job-card">
+            <div class="job-card" 
+                 data-title="<?php echo strtolower(htmlspecialchars($job['title'])); ?>" 
+                 data-company="<?php echo strtolower(htmlspecialchars($job['company'])); ?>" 
+                 data-type="<?php echo htmlspecialchars($job['type']); ?>">
                 <div class="job-card-header">
                     <div class="job-type-badge"><?php echo htmlspecialchars($job['type']); ?></div>
                     
@@ -53,7 +65,7 @@ $jobs = getAllJobs($pdo);
                     <?php if($applied): ?>
                         <button class="btn-action btn-applied">Already Applied</button>
                     <?php else: ?>
-                        <!-- Pass job data to JS Modal function -->
+                
                         <button class="btn-action btn-apply" 
                                 onclick='showJobDetails(<?php echo json_encode($job); ?>)'>
                             Apply Now
@@ -65,7 +77,7 @@ $jobs = getAllJobs($pdo);
     </div>
 </div>
 
-<!-- JOB DETAILS MODAL (Pop-up when Apply is clicked) -->
+
 <div id="jobDetailModal" class="job-modal-overlay">
     <div class="job-modal-box">
         <div class="modal-header">
@@ -101,7 +113,7 @@ $jobs = getAllJobs($pdo);
 </div>
 
 <script>
-// Modal Toggle Script
+
 const modal = document.getElementById('jobDetailModal');
 
 function showJobDetails(job) {
@@ -122,6 +134,36 @@ function closeModal() {
     modal.style.display = 'none';
 }
 
-// Close modal if user clicks on the dark background
+
 window.onclick = (e) => { if(e.target == modal) closeModal(); }
+
+
+const jobSearch = document.getElementById('jobSearch');
+const typeFilter = document.getElementById('typeFilter');
+const cards = document.querySelectorAll('.job-card');
+
+function filterData() {
+    const q = jobSearch.value.toLowerCase();
+    const type = typeFilter.value;
+
+    cards.forEach(card => {
+        
+        const title = card.getAttribute('data-title') || "";
+        const company = card.getAttribute('data-company') || "";
+        const jobType = card.getAttribute('data-type') || "";
+
+        const matchesText = title.includes(q) || company.includes(q);
+        const matchesType = (type === 'all' || jobType === type);
+
+        
+        if (matchesText && matchesType) {
+            card.style.display = 'flex';
+        } else {
+            card.style.display = 'none';
+        }
+    });
+}
+
+jobSearch.addEventListener('input', filterData);
+typeFilter.addEventListener('change', filterData);
 </script>

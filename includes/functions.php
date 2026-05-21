@@ -82,7 +82,6 @@ function getAdminStats($pdo) {
     $stats['users'] = $pdo->query("SELECT COUNT(*) FROM users WHERE role = 'user'")->fetchColumn();
     $stats['jobs'] = $pdo->query("SELECT COUNT(*) FROM jobs")->fetchColumn();
     $stats['apps'] = $pdo->query("SELECT COUNT(*) FROM applications")->fetchColumn();
-    // Extra stat: Successful matches (Accepted applications)
     $stats['hires'] = $pdo->query("SELECT COUNT(*) FROM applications WHERE status = 'Accepted'")->fetchColumn();
     return $stats;
 }

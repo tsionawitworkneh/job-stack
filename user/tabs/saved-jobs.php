@@ -19,7 +19,7 @@ $saved_jobs = getSavedJobs($pdo, $user_id);
                 <h3 style="margin:10px 0 5px;"><?php echo htmlspecialchars($job['title']); ?></h3>
                 <p style="color:#64748b; font-size:14px; margin-bottom:20px;"><?php echo htmlspecialchars($job['company']); ?></p>
                 
-                <button class="btn-action btn-apply" style="width:100%;" onclick='showJobDetails(<?php echo json_encode($job); ?>)'>
+                <button class="btn-action btn-apply" style="width: 150px;" onclick='showJobDetails(<?php echo json_encode($job); ?>)'>
                     View Details
                 </button>
             </div>
