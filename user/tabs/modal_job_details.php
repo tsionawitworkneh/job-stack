@@ -34,7 +34,15 @@ function showJobDetails(job) {
     document.getElementById('m-location').innerText = job.location;
     document.getElementById('m-type').innerText = job.type;
     document.getElementById('m-salary').innerText = job.salary;
-    document.getElementById('m-date').innerText = "Posted on " + job.created_at;
+    let displayDate = job.created_at || job.applied_at;
+
+    if (displayDate) {
+        const d = new Date(displayDate);
+        const formatted = d.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
+        document.getElementById('m-date').innerText = "Posted on " + formatted;
+    } else {
+        document.getElementById('m-date').innerText = "Date not available";
+    }
     document.getElementById('m-desc').innerText = job.description;
     document.getElementById('m-req').innerText = job.requirements || "No specific requirements listed.";
     

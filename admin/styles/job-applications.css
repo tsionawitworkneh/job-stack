@@ -1,0 +1,129 @@
+/* admin/styles/job-applications.css */
+
+.apps-container {
+    width: 100%;
+    animation: fadeIn 0.4s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.apps-card {
+    background: #ffffff;
+    border-radius: 20px;
+    border: 1px solid #f3f4f6;
+    padding: 32px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.02);
+}
+
+.apps-header {
+    margin-bottom: 30px;
+}
+
+.apps-header h2 {
+    margin: 0;
+    font-size: 20px;
+    font-weight: 700;
+    color: #111827;
+}
+
+.apps-header p {
+    margin: 5px 0 0 0;
+    color: #64748b;
+    font-size: 14px;
+}
+
+/* Table Design */
+.apps-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.apps-table th {
+    text-align: left;
+    padding: 16px 20px;
+    background: #f9fafb;
+    color: #6b7280;
+    font-size: 13px;
+    font-weight: 600;
+    border-bottom: 1px solid #f3f4f6;
+}
+
+.apps-table td {
+    padding: 20px;
+    border-bottom: 1px solid #f9fafb;
+    font-size: 14px;
+    color: #111827;
+    vertical-align: middle;
+}
+
+/* Candidate Information */
+.candidate-info b {
+    display: block;
+    color: #111827;
+    font-weight: 600;
+    margin-bottom: 2px;
+}
+
+.candidate-info span {
+    font-size: 12px;
+    color: #6b7280;
+}
+
+/* Job Position Info */
+.job-info-text {
+    font-weight: 600;
+    color: #111827;
+}
+
+.company-sub-text {
+    display: block;
+    font-size: 12px;
+    color: #94a3b8;
+    margin-top: 2px;
+}
+
+/* CV Link Button */
+.link-cv {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: #2563eb;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 13px;
+    padding: 6px 12px;
+    background: #eff6ff;
+    border-radius: 8px;
+    transition: 0.2s;
+}
+
+.link-cv:hover {
+    background: #dbeafe;
+}
+
+/* Status Dropdown Design */
+.status-select-wrapper select {
+    padding: 8px 12px;
+    border-radius: 10px;
+    font-size: 12px;
+    font-weight: 700;
+    border: 1px solid #e5e7eb;
+    background-color: #fff;
+    cursor: pointer;
+    outline: none;
+    transition: 0.2s;
+}
+
+/* Custom Status Colors for Select */
+.select-Pending { color: #d97706; background-color: #fffbeb !important; border-color: #fde68a; }
+.select-Reviewed { color: #2563eb; background-color: #eff6ff !important; border-color: #bfdbfe; }
+.select-Accepted { color: #16a34a; background-color: #f0fdf4 !important; border-color: #bbf7d0; }
+.select-Rejected { color: #dc2626; background-color: #fef2f2 !important; border-color: #fecaca; }
+
+.date-text {
+    color: #64748b;
+    font-size: 13px;
+}

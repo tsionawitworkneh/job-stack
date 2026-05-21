@@ -122,7 +122,12 @@ function showJobDetails(job) {
     document.getElementById('m-location').innerText = job.location;
     document.getElementById('m-type').innerText = job.type;
     document.getElementById('m-salary').innerText = job.salary;
-    document.getElementById('m-date').innerText = "Posted on " + job.created_at;
+    if (job.created_at) {
+        document.getElementById('m-date').innerText = "Posted on " + job.created_at;
+    } else {
+        document.getElementById('m-date').innerText = "Date not available";
+    }
+
     document.getElementById('m-desc').innerText = job.description;
     document.getElementById('m-req').innerText = job.requirements || "No specific requirements listed.";
     document.getElementById('m-job-id').value = job.id;

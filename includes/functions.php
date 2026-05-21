@@ -53,7 +53,7 @@ function getStatusClass($status) {
  */
 function getAllJobs($pdo) {
     $stmt = $pdo->query("SELECT * FROM jobs ORDER BY created_at DESC");
-    return $stmt->fetchAll();
+    return $stmt->fetchAll(PDO::FETCH_ASSOC);
 }
 
 /**
@@ -182,6 +182,21 @@ function getAITopMatches($pdo, $userId) {
     $stmt = $pdo->prepare($sql);
     $stmt->execute([$userId]);
     return $stmt->fetchAll(PDO::FETCH_ASSOC);
+}
+
+/**
+ * Fetch every application on the platform for the Admin
+ */
+function getAllApplicationsAdmin($pdo) {
+    $sql = "SELECT a.id as app_id, a.status, a.applied_at, 
+                   u.fullname, u.email, p.cv_file,
+                   j.title as job_title, j.company
+            FROM applications a
+            JOIN users u ON a.user_id = u.id
+            LEFT JOIN user_profiles p ON u.id = p.user_id
+            JOIN jobs j ON a.job_id = j.id
+            ORDER BY a.applied_at DESC";
+    return $pdo->query($sql)->fetchAll(PDO::FETCH_ASSOC);
 }
 
 ?>
