@@ -34,7 +34,7 @@ $user_id = $_SESSION['user_id'];
         </nav>
 
         <div class="logout-btn">
-            <a href="../actions/logout.php" class="nav-item" style="color: #ef4444;">
+            <a href="../actions/admin_logout.php" class="nav-item" style="color: #ef4444;">
                 <i class="fa-solid fa-right-from-bracket"></i> Logout
             </a>
         </div>
