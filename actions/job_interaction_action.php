@@ -3,7 +3,7 @@
 session_start();
 require_once '../config/db.php';
 
-// Security: User must be logged in
+
 if (!isset($_SESSION['user_id'])) {
     header("Location: ../login.php");
     exit();
@@ -30,7 +30,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['confirm_apply'])) {
             $msg = "already_applied";
         }
 
-        // Redirect to the "Applied Jobs" tab
+        
         header("Location: ../user/dashboard.php?tab=applied-jobs&msg=" . $msg);
         exit();
 
@@ -40,9 +40,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['confirm_apply'])) {
     }
 }
 
-// =========================================================
-// 2. HANDLE SAVE / BOOKMARK (Submitted via GET)
-// =========================================================
+
 if (isset($_GET['save_id'])) {
     $job_id = $_GET['save_id'];
 
@@ -51,10 +49,10 @@ if (isset($_GET['save_id'])) {
         $check->execute([$user_id, $job_id]);
 
         if ($check->fetch()) {
-            // Already saved, so delete it (Toggle off)
+            
             $pdo->prepare("DELETE FROM saved_jobs WHERE user_id = ? AND job_id = ?")->execute([$user_id, $job_id]);
         } else {
-            // Not saved, so insert it (Toggle on)
+            
             $pdo->prepare("INSERT INTO saved_jobs (user_id, job_id) VALUES (?, ?)")->execute([$user_id, $job_id]);
         }
 
@@ -65,6 +63,6 @@ if (isset($_GET['save_id'])) {
     }
 }
 
-// If no valid request, go back to dashboard
+
 header("Location: ../user/dashboard.php");
 exit();

@@ -1,15 +1,15 @@
 <?php
-// Link the exact styling
+
 echo '<link rel="stylesheet" href="../assets/css/overview.css">';
 
-// Fetch Real Data (assuming functions.php is included in dashboard.php)
+
 $applied = getApplicationCount($pdo, $user_id);
 $saved = getSavedCount($pdo, $user_id);
 $pending = getApplicationCount($pdo, $user_id, 'Pending');
 $approved = getApplicationCount($pdo, $user_id, 'Accepted');
 ?>
 
-<!-- 1. Stats Grid -->
+
 <div class="stats-grid">
     <div class="stat-card">
         <div class="stat-data">
@@ -44,13 +44,13 @@ $approved = getApplicationCount($pdo, $user_id, 'Accepted');
     </div>
 </div>
 
-<!-- 2. Recent Applications Header -->
+
 <div class="section-title-row">
     <h2>Recent Applications</h2>
     <a href="?tab=applied-jobs" class="btn-view-all">View All</a>
 </div>
 
-<!-- 3. The Table -->
+
 <div class="table-wrapper">
     <table class="modern-table">
         <thead>

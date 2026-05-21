@@ -66,7 +66,7 @@ body {
     color: var(--primary);
 }
 
-/* Header */
+
 .signup-header {
     text-align: center;
     margin-bottom: 25px;
@@ -85,7 +85,7 @@ body {
     color: var(--text-main);
 }
 
-/* Form */
+
 .signup-form {
     margin-top: 20px;
 }
@@ -134,7 +134,7 @@ body {
     color: var(--text-light);
 }
 
-/* Button */
+
 .signup-btn {
     width: 100%;
 

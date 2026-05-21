@@ -19,7 +19,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $_SESSION['user_name'] = $user['fullname'];
         $_SESSION['user_role'] = $user['role'];
 
-        // Redirect to User Dashboard
+        
         header("Location: ../user/dashboard.php");
         exit();
     } else {

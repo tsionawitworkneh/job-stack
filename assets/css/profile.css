@@ -27,7 +27,7 @@
 
 .section-title i { color: #2563eb; }
 
-/* Form Elements */
+
 .profile-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -67,7 +67,7 @@
     box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.1);
 }
 
-/* DASHED UPLOAD ZONE (From previous section) */
+
 .upload-container {
     background: #f8fafc;
     border: 2px dashed #cbd5e1;
@@ -89,7 +89,7 @@
     margin-bottom: 15px;
 }
 
-/* CV Current File Status */
+
 .cv-exists-badge {
     display: inline-flex;
     align-items: center;

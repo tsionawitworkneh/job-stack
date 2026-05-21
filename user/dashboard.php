@@ -41,7 +41,7 @@ $user_id = $_SESSION['user_id'];
         </div>
     </aside>
 
-    <!-- Main Content -->
+    
     <main class="main-content">
         <header class="top-bar">
             <h2>Welcome back, <?php echo explode(' ', $_SESSION['user_name'])[0]; ?>! 👋</h2>
@@ -53,11 +53,11 @@ $user_id = $_SESSION['user_id'];
 
         <div class="tab-content">
             <?php 
-        // Sync the array names with your sidebar hrefs
+        
         $allowed_tabs = ['overview', 'find-jobs', 'applied-jobs', 'saved-jobs', 'ai', 'profile'];
         
         if (in_array($tab, $allowed_tabs)) {
-            // This will look for tabs/find-jobs.php, etc.
+            
             include "tabs/" . $tab . ".php";
         } else {
             include "tabs/overview.php";

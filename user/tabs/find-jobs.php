@@ -31,7 +31,7 @@ $jobs = getAllJobs($pdo);
             </div>
         <?php else: foreach($jobs as $job): ?>
             <?php 
-                // Check status for each job
+                
                 $applied = hasApplied($pdo, $user_id, $job['id']); 
                 $saved = isSaved($pdo, $user_id, $job['id']); 
             ?>
@@ -42,7 +42,7 @@ $jobs = getAllJobs($pdo);
                 <div class="job-card-header">
                     <div class="job-type-badge"><?php echo htmlspecialchars($job['type']); ?></div>
                     
-                    <!-- SAVE / BOOKMARK BUTTON -->
+                    
                     <a href="../actions/job_interaction_action.php?save_id=<?php echo $job['id']; ?>" 
                        class="btn-save-icon <?php echo ($saved) ? 'saved' : ''; ?>" 
                        title="<?php echo ($saved) ? 'Unsave Job' : 'Save Job'; ?>">

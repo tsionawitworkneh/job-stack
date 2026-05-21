@@ -28,7 +28,8 @@ body {
     background: #fff;
     border-right: 1px solid var(--border);
     position: fixed;
-    left: 0; top: 0;
+    left: 0;
+    top: 0;
     display: flex;
     flex-direction: column;
     z-index: 100;
@@ -103,9 +104,22 @@ body {
     text-align: left;
 }
 
-.user-profile { display: flex; align-items: center; gap: 12px; text-align: right; }
-.user-profile span { display: block; font-weight: 500; font-size: 14px; }
-.user-profile i { color: #d1d5db; }
+.user-profile {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    text-align: right;
+}
+
+.user-profile span {
+    display: block;
+    font-weight: 500;
+    font-size: 14px;
+}
+
+.user-profile i {
+    color: #d1d5db;
+}
 
 .tab-content {
     width: 100%;
