@@ -1,105 +1,118 @@
-/* assets/css/tabs/profile.css */
 
-.profile-container {
-    max-width: 800px;
-    width: 100%;
+.profile-wrapper {
+    max-width: 850px;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
 }
 
 .profile-card {
-    background: white;
+    background: #ffffff;
     border-radius: 20px;
-    border: 1px solid #f1f5f9;
-    padding: 40px;
-    margin-bottom: 30px;
+    border: 1px solid #f3f4f6;
+    padding: 32px;
+    margin-left: 50px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.02);
 }
 
 .section-title {
     font-size: 18px;
     font-weight: 700;
-    color: #1e293b;
+    color: #111827;
     margin-bottom: 24px;
     display: flex;
     align-items: center;
     gap: 10px;
 }
 
-/* Info Form Styling */
-.form-grid {
+.section-title i { color: #2563eb; }
+
+/* Form Elements */
+.profile-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 20px;
 }
 
-.input-group {
+.full-width { grid-column: span 2; }
+
+.form-group {
     display: flex;
     flex-direction: column;
     gap: 8px;
-    margin-bottom: 20px;
+    margin-bottom: 15px;
 }
 
-.input-group label {
+.form-group label {
     font-size: 13px;
     font-weight: 600;
-    color: #64748b;
+    color: #4b5563;
 }
 
-.input-group input {
+.form-group input, 
+.form-group textarea {
     padding: 12px 16px;
-    border: 1px solid #e2e8f0;
+    border: 1px solid #e5e7eb;
     border-radius: 12px;
     font-size: 14px;
-    background: #f8fafc;
+    background: #f9fafb;
+    outline: none;
+    transition: 0.2s;
 }
 
-/* CV Upload Zone */
-.upload-zone {
-    border: 2px dashed #cbd5e1;
+.form-group input:focus, 
+.form-group textarea:focus {
+    border-color: #2563eb;
+    background: #fff;
+    box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.1);
+}
+
+/* DASHED UPLOAD ZONE (From previous section) */
+.upload-container {
     background: #f8fafc;
+    border: 2px dashed #cbd5e1;
+    border-radius: 20px;
     padding: 40px;
-    border-radius: 16px;
     text-align: center;
     transition: 0.2s;
     cursor: pointer;
 }
 
-.upload-zone:hover {
+.upload-container:hover {
     border-color: #2563eb;
     background: #eff6ff;
 }
 
 .upload-icon {
-    font-size: 32px;
+    font-size: 40px;
     color: #2563eb;
     margin-bottom: 15px;
 }
 
-.current-cv-box {
-    display: flex;
+/* CV Current File Status */
+.cv-exists-badge {
+    display: inline-flex;
     align-items: center;
-    justify-content: space-between;
-    background: #f0fdf4;
-    padding: 15px 20px;
-    border-radius: 12px;
-    border: 1px solid #bbf7d0;
-    margin-bottom: 20px;
-}
-
-.cv-info {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    color: #166534;
-    font-size: 14px;
+    gap: 8px;
+    background: #dcfce7;
+    color: #15803d;
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 12px;
     font-weight: 600;
+    margin-top: 10px;
 }
 
 .btn-save-profile {
     background: #2563eb;
     color: white;
     border: none;
-    padding: 12px 30px;
-    border-radius: 10px;
-    font-weight: 600;
+    padding: 14px 40px;
+    border-radius: 12px;
+    font-weight: 700;
     cursor: pointer;
     margin-top: 10px;
+    transition: 0.2s;
 }
+
+.btn-save-profile:hover { background: #1d4ed8; }

@@ -160,4 +160,29 @@ function getFullUserProfile($pdo, $userId) {
     return $stmt->fetch();
 }
 
+/**
+ * Fetch the skills extracted from the user's latest CV analysis
+ */
+function getUserSkills($pdo, $userId) {
+    $stmt = $pdo->prepare("SELECT strengths FROM ai_insights WHERE user_id = ? LIMIT 1");
+    $stmt->execute([$userId]);
+    $row = $stmt->fetch();
+    // Returns an array of skills or an empty array
+    return $row ? explode(', ', $row['strengths']) : [];
+}
+
+/**
+ * Fetch all job matches for this user, ranked by highest score
+ */
+function getAITopMatches($pdo, $userId) {
+    $sql = "SELECT ai.match_score, ai.missing_skills, j.title, j.company, j.location, j.salary 
+            FROM ai_insights ai 
+            JOIN jobs j ON ai.job_id = j.id 
+            WHERE ai.user_id = ? 
+            ORDER BY ai.match_score DESC";
+    $stmt = $pdo->prepare($sql);
+    $stmt->execute([$userId]);
+    return $stmt->fetchAll(PDO::FETCH_ASSOC);
+}
+
 ?>
